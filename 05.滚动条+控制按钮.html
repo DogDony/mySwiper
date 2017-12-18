@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/swiper.css">
+	<script src="js/swiper.js"></script>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		.swiper-container{
+			width:500px;
+			height:300px;
+			border:1px solid #ccc;
+			margin:100px auto;
+
+		}
+		.swiper-slide{
+			display:flex;
+			background-color:red;
+			justify-content:center;/*横向上居中*/
+			align-items:center;/*垂直方向上居中*/
+		}
+
+	</style>
+
+</head>
+<body>
+	<!-- div.swiper-container>div.swiper-wrapper>div.swiper-slide{第$页}*5 -->
+	<div class="swiper-container">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide">第1页</div>
+			<div class="swiper-slide">第2页</div>
+			<div class="swiper-slide">第3页</div>
+			<div class="swiper-slide">第4页</div>
+			<div class="swiper-slide">第5页</div>
+		</div>
+		<!-- 添加滚动条 -->
+		<div class="swiper-scrollbar"></div>
+		<!-- 添加左右控制按钮 -->
+		<div class="swiper-button-prev swiper-button-white"></div>
+		<div class="swiper-button-next swiper-button-white"></div>
+	</div>
+	<script>
+		var mySwiper=new Swiper(".swiper-container",{
+			scrollbar:".swiper-scrollbar",
+			prevButton:".swiper-button-prev",
+			nextButton:".swiper-button-next"
+		});//调用
+	</script>
+</body>
+</html>

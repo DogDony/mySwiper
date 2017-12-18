@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		function run(){
+			var newDate=new Date("2017-11-11 00:00:00");
+			var date=new Date();
+			var miliSeconds=newDate.getTime()-date.getTime();//剩下的毫秒数
+			if(miliSeconds<0){
+				document.getElementById("lastDate").innerHTML="双十一已经过了";
+			}else{
+				var seconds=miliSeconds/1000;//秒
+				var day=Math.floor(seconds/60/60/24);//天
+				var hour=Math.floor(seconds/60/60%24);//小时
+				var minute=Math.floor(seconds/60%60);//分钟
+				var sec=Math.floor(seconds%60);//秒
+				minute=checkNum(minute);
+				sec=checkNum(sec);
+				document.getElementById("lastDate").innerHTML="距离双十一还有"+day+"天"+hour+"小时"+minute+"分钟"+sec+"秒";
+			}
+		}
+		function checkNum(num){
+			if(num<10){
+				num="0"+num;
+			}
+			return num;
+		}
+		window.onload=function(){
+			run();
+			setInterval(run,1000);
+		}
+	</script>
+
+</head>
+<body>
+	<p id="lastDate"></p>
+</body>
+</html>
